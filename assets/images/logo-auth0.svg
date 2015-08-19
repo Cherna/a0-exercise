@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="78px" height="78px" viewBox="0 0 78 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 7 Copy + Shape Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="mobile-authorize-app" sketch:type="MSArtboardGroup" transform="translate(-182.000000, -38.000000)">
+            <g id="Rectangle-7-+-Shape-Copy-2-+-Shape-Copy" sketch:type="MSLayerGroup" transform="translate(115.000000, 38.000000)">
+                <g id="Rectangle-7-+-Shape-Copy-2" sketch:type="MSShapeGroup">
+                    <g id="Rectangle-7-+-Group-+-Rectangle-7-Copy-+-Shape-Copy-2">
+                        <g id="Rectangle-7-Copy-+-Shape-Copy-2" transform="translate(67.000000, 0.000000)">
+                            <rect id="Rectangle-7-Copy" stroke-opacity="0.2" stroke="#979797" fill="#FFFFFF" x="0" y="0" width="78" height="78" rx="65.0000036"></rect>
+                            <path d="M50.462596,55.2567885 L46.0855385,41.5993417 L57.5430385,33.1608702 L43.3803351,33.1608702 L39.002758,19.50395 L39.0014592,19.5002633 L53.1665005,19.5002633 L57.5448569,33.1595535 L57.5448569,33.1592902 L57.5484936,33.1571835 C60.091603,41.0813678 57.4726419,50.0941662 50.462596,55.2567885 L50.462596,55.2567885 L50.462596,55.2567885 Z M27.5424005,55.2567885 L27.5387638,55.2594219 L38.9993811,63.7 L50.462596,55.2570519 L39.0030178,46.8162104 L27.5424005,55.2567885 L27.5424005,55.2567885 Z M20.4588408,33.1574469 L20.4588408,33.1574469 C17.7822116,41.5105988 20.8892731,50.3617114 27.5400626,55.2583685 L27.5411017,55.2541552 L31.9186787,41.5974983 L20.4635166,33.1606069 L34.6228431,33.1606069 L39.0006799,19.5036866 L39.001719,19.5 L24.8358983,19.5 L20.4588408,33.1574469 L20.4588408,33.1574469 Z" id="Shape-Copy-2" fill="#EB5424"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
