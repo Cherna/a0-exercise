@@ -10,17 +10,50 @@
   <body>
     <aside class="modal-container">
       <div class="top-section">
+        <span class="blur-background"></span>
+        <div class="logos-container">
+          <img src="assets/images/logo-app.svg" alt="App" class="app-logo logo-small">
+          <img src="assets/images/logo-auth0.svg" alt="Auth-0" class="auth0-logo logo-small">
+        </div>
         <h2 class="title">Authorize App</h2>
         <p class="subtitle">Simulated App</p>
       </div>
       <div class="middle-section">
         <p class="notification">Hi, <strong class="highlight">ricky.rauch@auth0.com</strong>, <strong class="highlight">Simulated App</strong> is requesting access to your account.</p>
+        <ul class="permissions-list">
+          <li class="permit-item row">
+            <span class="sprite icon-small icon-connect"></span>
+            <p class="permit-text">
+              <strong class="highlight">Connections:</strong> query your connections
+            </p>
+          </li>
+          <li class="permit-item row">
+            <span class="sprite icon-small icon-apps"></span>
+            <p class="permit-text">
+              <strong class="highlight">Applications:</strong> query, create, update and delete applications
+            </p>
+          </li>
+          <li class="permit-item row">
+            <span class="sprite icon-small icon-users"></span>
+            <p class="permit-text">
+              <strong class="highlight">Users:</strong> query, create and update
+            </p>
+          </li>
+          <li class="permit-item row">
+            <span class="sprite icon-small icon-stats"></span>
+            <p class="permit-text">
+              <strong class="highlight">Stats:</strong> query your statistics
+            </p>
+          </li>
+        </ul>
       </div>
       <div class="ctas-container clearfix">
         <p class="show-more">show more</p>
         <button class="btn-cancel">
+          <span class="sprite icon-cta-small icon-cta-cancel"></span>
         </button>
         <button class="btn-accept">
+          <span class="sprite icon-cta-small icon-cta-accept"></span>
         </button>
       </div>
     </aside>

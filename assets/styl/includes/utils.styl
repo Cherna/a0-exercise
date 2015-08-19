@@ -43,12 +43,87 @@ center-reset()
   left auto
   top auto
   transform none
-
+  
 // General purpose
 
   // Variables
   
     // Colors
+    main-bg-color-dark = #222228
+    main-bg-color-light = #F1F1F1
+
+    main-text-color = #000000
+    secondary-text-color = #6B6B6B
+    secondary-darker-text-color = #4A4A4A
     
     cancel-btn-color = #5C666F
     accept-btn-color = #40DF7D
+
+    // Font sizes
+    h22px = 1rem
+    m18px = 0.81rem
+    m15px = 0.681rem
+    sub12px = 0.54rem
+
+    // Sizes and others
+    modal-icon-size = 38px
+    animation-duration = 0.5s
+    border-radius = 5px
+      
+.normal-text {
+  opacity 0.8
+  font-family 'Avenir-Roman', sans-serif
+  color #000000
+  margin 0
+}
+  
+
+  // Reusable
+
+.logo-small
+  display inline-block
+  width 78px
+  height 78px
+  
+.sprite
+  background-image url("images/sprite.svg")
+  background-repeat no-repeat
+
+.icon-connect
+  background-position -1px -1px
+
+.icon-apps
+  background-position -42px -1px
+
+.icon-users
+  background-position -83px -1px
+
+.icon-stats
+  background-position -124px -1px
+  
+.icon-small
+  display inline-block
+  vertical-align middle
+  width 38px
+  height 38px
+
+.icon-x-small
+  width 14px
+  height 14px
+  
+.icon-code
+  background-position -166px 0
+
+.icon-cta-small
+  display inline-block
+  width 44px
+  height 44px
+  
+.icon-cta-cancel
+  background-position -49px -54px
+
+.icon-cta-accept
+  background-position -1px -54px
+  
+.icon-cta-next
+  background-position -99px -54px

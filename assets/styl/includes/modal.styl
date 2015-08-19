@@ -1,8 +1,22 @@
 body
   background-color white
+  
+  +breakpoint('mobile-landscape')
+    background-color main-bg-color-dark
 
 .modal-container
+  position relative
+  overflow hidden
   background-color white
+  
+  @media only screen and (orientation:portrait)
+    height 100%
+    
+  +breakpoint('mobile-landscape')
+    width 450px
+    overflow visible
+    center-both()
+    border-radius border-radius
   
 .top-section
   padding 5.4% 0 2.9% 0
@@ -11,12 +25,107 @@ body
   text-align center
   background-color #ddd
   
+  +breakpoint('mobile-landscape')
+    padding 45px 0 20px 0
+    border-top-left-radius border-radius
+    border-top-right-radius border-radius
+  
+  .logos-container
+    +breakpoint('mobile-landscape')
+      center-horizontal()
+      top 0
+      transform translateY(-50%) translateX(-50%)
+
+    .app-logo
+      position relative
+      margin-right -10px
+      z-index 10
+    .auth0-logo
+      margin-left -10px
+  
+  .title
+    font-size h22px
+    line-height 1.36em
+    @extend .normal-text
+    color main-text-color
+  
+  .subtitle
+    font-family 'Avenir-Medium', sans-serif
+    font-size sub12px
+    line-height 0.72em
+    text-transform uppercase
+    @extend .normal-text
+    color main-text-color
+
 .middle-section
   position relative
   padding 5.4% 0 5.4%
   background-color white
   text-align center
+  
+  +breakpoint('mobile-landscape')
+    padding 32px 0 35px 0
+    border-bottom-left-radius border-radius+2
+    border-bottom-right-radius border-radius+2
+  
+  .notification
+    padding 0 2.2em
+    margin 0 0 25px 0
+    font-family 'Avenir-Roman', sans-serif
+    font-size m18px
+    color secondary-text-color
+    line-height 1.36em
+    opacity 0.8
+    
+    .highlight
+      color main-text-color
+      font-weight normal
+  
+  .permissions-list
+    position relative
+    padding 0 1.6em
 
+    .permit-item
+      display table
+      margin-bottom 20px 
+      @extend .normal-text
+      font-size m15px
+      text-align left
+      font-family 'Avenir-Roman', sans-serif
+      color secondary-text-color
+      
+      &:last-of-type
+        margin-bottom 0
+      
+      .highlight
+        font-weight normal
+        color main-text-color
+        
+    .permit-text
+      display table-cell
+      vertical-align middle
+      margin 0 
+      opacity 0.8
+      color secondary-darker-text-color
+      line-height 0.9rem
+    
+    .icon-small
+      margin-right 14px
+      
+.show-more
+  margin 0
+  padding 15px 0
+  border-top 1px solid #EBEBEB
+  text-align center
+  text-transform uppercase
+  font-family 'Proxima Nova', sans-serif
+  font-size sub12px
+  color secondary-darker-text-color
+  letter-spacing 0.09rem
+  line-height 0.63em
+  background-color white
+  cursor pointer
+      
 .ctas-container
   position absolute
   bottom 0
@@ -29,8 +138,65 @@ body
     height 75px
     float left
     
+    .icon-cta-small
+      center-both()
+
+    
   .btn-cancel
     background-color cancel-btn-color
+    
+    +breakpoint('mobile-landscape')
+      border-bottom-left-radius border-radius
   
   .btn-accept
     background-color accept-btn-color
+    
+    +breakpoint('mobile-landscape')
+      border-bottom-right-radius border-radius
+    
+
+.modal-second
+  width 300px
+  
+  .top-section
+    padding 14px 0 16px 0
+    .logos-container
+      center-reset()
+      margin-bottom 15px
+      
+      img
+        margin-left 0
+        
+  .code-icon-cont
+    position relative
+    display inline-block
+    width 40px
+    margin-right 0
+    background-color main-bg-color-light
+  
+  .input-cont
+    margin 0 35px
+    background-color main-bg-color-light
+    
+    .icon-code
+      display inline-block
+      
+    input
+      display inline-block
+
+  .ctas-container
+    position relative
+    height 75px
+    background-color accept-btn-color
+    
+    +breakpoint('mobile-landscape')
+        border-bottom-left-radius border-radius
+        border-bottom-right-radius border-radius
+    
+    .btn-next
+      width 100%
+      padding 18px 0
+      background none
+      
+      .icon-cta-small
+        center-both()
