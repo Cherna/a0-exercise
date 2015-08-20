@@ -8,12 +8,14 @@ body
   position relative
   overflow hidden
   background-color white
+  min-width 300px
   
   @media only screen and (orientation:portrait)
     height 100%
     
   +breakpoint('mobile-landscape')
     width 450px
+    min-width auto
     overflow visible
     center-both()
     border-radius border-radius
@@ -173,6 +175,8 @@ body
         margin-left 0
   
   .middle-section
+    +breakpoint('mobile-landscape')
+      padding 42px 0
     
     .verification-form
       height 48px
@@ -180,8 +184,9 @@ body
       .code-icon-cont
         position relative
         display inline-block
-        width 48px
-        height 48px
+        float left
+        width input-icon-size
+        height input-icon-size
         margin-right 0
         background-color main-bg-color-light
         border-top-left-radius border-radius
@@ -197,7 +202,9 @@ body
           
         input
           display inline-block
-          width 225px
+          float left
+          // Really? This should be way easier. Like use interpolation or something.
+          width "calc(100% - %s)" % input-icon-size
           padding-left 16px
           height 100%
           border 1px solid #EEE
@@ -207,13 +214,16 @@ body
           // Cant replace color with variable for some unknown reason
           color #999999
           line-height 22px
+          border-top-right-radius border-radius
+          border-bottom-right-radius border-radius
     
     .verification-notice
       font-family 'Avenir-Book', sans-serif
-      font-size 16px
+      font-size m14px
       color rgba(0,0,0,0.80)
       line-height 24px
       padding 0 40px;
+      margin 0 0 23px 0
 
   .ctas-container
     position relative

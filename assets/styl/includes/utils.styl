@@ -1,84 +1,8 @@
-// Auth-0 mixins
-
-breakpoint(point, value = 0)
-  if point == "mobile"
-    @media (min-width: 320px)
-      {block}
-
-  else if point == "mobile-landscape"
-    @media (min-width: 568px)
-      {block}
-
-  else if point == "tablet"
-    @media (min-width: 768px)
-      {block}
-
-  else if point == "desktop"
-    @media (min-width: 992px)
-      {block}
-
-  else if point == "retina-only"
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-      {block}
-
-  else
-    @media (point: value)
-      {block}
-
-// Custom mixins
-
-center-horizontal()
-  position absolute
-  left 50%
-  transform translateX(-50%)
-
-center-both()
-  position absolute
-  left 50%
-  top 50%
-  transform translateX(-50%) translateY(-50%)
-  
-center-reset()
-  position static
-  left auto
-  top auto
-  transform none
-  
-// General purpose
-
-  // Variables
-  
-    // Colors
-    main-bg-color-dark = #222228
-    main-bg-color-light = #F1F1F1
-
-    main-text-color = #000000
-    secondary-text-color = #6B6B6B
-    secondary-darker-text-color = #4A4A4A
-    
-    cancel-btn-color = #5C666F
-    accept-btn-color = #40DF7D
-
-    // Font sizes
-    h22px = 1rem
-    m18px = 0.81rem
-    m15px = 0.681rem
-    sub12px = 0.54rem
-
-    // Sizes and others
-    modal-icon-size = 38px
-    animation-duration = 0.5s
-    border-radius = 5px
-      
-.normal-text {
+.normal-text
   opacity 0.8
   font-family 'Avenir-Roman', sans-serif
   color #000000
   margin 0
-}
-  
-
-  // Reusable
 
 .logo-small
   display inline-block
@@ -127,3 +51,18 @@ center-reset()
   
 .icon-cta-next
   background-position -99px -54px
+
+.close-modal-btn
+  position absolute
+  top 14px
+  right 14px
+  display inline-block
+  
+.icon-close
+  width 20px
+  height 20px
+  background-color transparent
+  background-position -184px -1px
+  box-shadow 0 1px 2px 0 rgba(0,0,0,0.4)
+  border-radius 50%
+  cursor pointer

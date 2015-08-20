@@ -1,0 +1,45 @@
+// Auth-0 mixins
+
+breakpoint(point, value = 0)
+  if point == "mobile"
+    @media (min-width: 320px)
+      {block}
+
+  else if point == "mobile-landscape"
+    @media (min-width: 568px)
+      {block}
+
+  else if point == "tablet"
+    @media (min-width: 768px)
+      {block}
+
+  else if point == "desktop"
+    @media (min-width: 992px)
+      {block}
+
+  else if point == "retina-only"
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+      {block}
+
+  else
+    @media (point: value)
+      {block}
+
+// Custom mixins
+
+center-horizontal()
+  position absolute
+  left 50%
+  transform translateX(-50%)
+
+center-both()
+  position absolute
+  left 50%
+  top 50%
+  transform translateX(-50%) translateY(-50%)
+  
+center-reset()
+  position static
+  left auto
+  top auto
+  transform none
