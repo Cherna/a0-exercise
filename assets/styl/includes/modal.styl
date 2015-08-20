@@ -156,33 +156,64 @@ body
     
 
 .modal-second
-  width 300px
+  display flex
+  flex-direction column
+  justify-content space-between
+  
+  +breakpoint('mobile-landscape')
+    width 300px
   
   .top-section
-    padding 14px 0 16px 0
+    padding 29px 0 28px 0
     .logos-container
       center-reset()
       margin-bottom 15px
       
       img
         margin-left 0
-        
-  .code-icon-cont
-    position relative
-    display inline-block
-    width 40px
-    margin-right 0
-    background-color main-bg-color-light
   
-  .input-cont
-    margin 0 35px
-    background-color main-bg-color-light
+  .middle-section
     
-    .icon-code
-      display inline-block
+    .verification-form
+      height 48px
       
-    input
-      display inline-block
+      .code-icon-cont
+        position relative
+        display inline-block
+        width 48px
+        height 48px
+        margin-right 0
+        background-color main-bg-color-light
+        border-top-left-radius border-radius
+        border-bottom-left-radius border-radius
+      
+      .input-cont
+        margin 0 35px
+        height 100%
+        
+        .icon-code
+          display inline-block
+          center-both()
+          
+        input
+          display inline-block
+          width 225px
+          padding-left 16px
+          height 100%
+          border 1px solid #EEE
+          vertical-align top
+          font-family 'Avenir-Roman', sans-serif
+          font-size 16px
+          // Cant replace color with variable for some unknown reason
+          color #999999
+          line-height 22px
+    
+    .verification-notice
+      font-family 'Avenir-Book', sans-serif
+      font-size 16px
+      color rgba(0,0,0,0.80)
+      line-height 24px
+      padding 0 40px;
 
   .ctas-container
     position relative
