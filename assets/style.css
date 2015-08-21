@@ -105,7 +105,7 @@ body {
   background-color: #fff;
   min-width: 300px;
 }
-@media only screen and (orientation: portrait) {
+@media only screen and (orientation: portrait) and (max-width: 568px) {
   .modal-container {
     height: 100%;
   }
@@ -238,10 +238,20 @@ body {
   background-color: #fff;
   cursor: pointer;
 }
+@media (min-width: 568px) {
+  .show-more {
+    display: none;
+  }
+}
 .ctas-container {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+@media (min-width: 568px) {
+  .ctas-container {
+    position: static;
+  }
 }
 .ctas-container .btn-cancel,
 .ctas-container .btn-accept {
@@ -380,6 +390,21 @@ body {
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+}
+@media (min-width: 568px) {
+  .modal-third {
+    width: 380px;
+  }
+}
+.modal-third .code-scan-cont {
+  text-align: center;
+}
+.modal-third .code-scan-cont .code-scan-text {
+  font-family: 'Avenir-Book', sans-serif;
+  font-size: 0.727rem;
+  color: rgba(0,0,0,0.8);
+  line-height: 24px;
+  padding: 0 37px;
 }
 .modal-container {
   transition: height 0.5s ease-in-out;

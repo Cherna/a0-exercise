@@ -10,7 +10,7 @@ body
   background-color white
   min-width 300px
   
-  @media only screen and (orientation:portrait)
+  @media only screen and (orientation:portrait) and (max-width: 568px)
     height 100%
     
   +breakpoint('mobile-landscape')
@@ -127,11 +127,17 @@ body
   line-height 0.63em
   background-color white
   cursor pointer
+  
+  +breakpoint('mobile-landscape')
+    display none
       
 .ctas-container
   position absolute
   bottom 0
   width 100%
+  
+  +breakpoint('mobile-landscape')
+    position static
   
   .btn-cancel,
   .btn-accept
@@ -241,3 +247,18 @@ body
       
       .icon-cta-small
         center-both()
+        
+.modal-third
+  
+  +breakpoint('mobile-landscape')
+    width 380px
+
+  .code-scan-cont
+    text-align center
+    
+    .code-scan-text
+      font-family 'Avenir-Book', sans-serif
+      font-size m16px
+      color rgba(0,0,0,0.80)
+      line-height 24px
+      padding 0 37px
