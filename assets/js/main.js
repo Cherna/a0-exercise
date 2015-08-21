@@ -1,106 +1,131 @@
 $(document).ready(function() {
 
-  var $modalCont = $('.modal-container'),
-      $topSec = $('.top-section'),
-      $middleSec = $('.middle-section'),
-      $ctasCont = $('.ctas-container'),
-      $showMore = $('.show-more'),
-      middleOpen = false,
+  var isModalSecond = $('.modal-second').length > 0,
+      isModalThird = $('.modal-third').length > 0,
       winMobile = window.innerWidth < 568 ? true : false;
 
-  if (winMobile) {
-    var topHeight = $topSec.innerHeight(),
-        midHeight = $middleSec.innerHeight(),
-        ctasHeight = $ctasCont.innerHeight(),
-        fullHeight = topHeight + midHeight + ctasHeight,
-        initHeight = $modalCont.height(),
-        initWinHeight = window.innerHeight;
+  // Check to execute only for first modal
+  if (!isModalSecond && !isModalThird) {
 
-    // Initialize hidden items and set the correct height to allow transition
-    getHiddenPermits('.permissions-list', '.ctas-container', function() {
-      if (!winMobile) {
-        $modalCont.height(fullHeight - ctasHeight);
-      }
-    });
+    var $modalCont = $('.modal-container'),
+        $topSec = $('.top-section'),
+        $middleSec = $('.middle-section'),
+        $ctasCont = $('.ctas-container'),
+        $showMore = $('.show-more'),
+        middleOpen = false;
 
-    // Get animation duration from css to define it only once
-    var animationDuration = $modalCont.css('transition-duration') ? (parseFloat($modalCont.css('transition-duration'))*1000) : 300;
+    if (winMobile) {
+      var topHeight = $topSec.innerHeight(),
+          midHeight = $middleSec.innerHeight(),
+          ctasHeight = $ctasCont.innerHeight(),
+          fullHeight = topHeight + midHeight + ctasHeight,
+          initHeight = $modalCont.height(),
+          initWinHeight = window.innerHeight;
 
-    // In case the show more btn is not needed remove it
-    if (winMobile && initWinHeight > fullHeight) {
-      $showMore.remove();
-    }
-
-    // Set correct height for modal to allow transition
-
-    $showMore.on('click', function() {
-      // Set some will-change properties to get better performance where supported
-      $modalCont.css('will-change', 'height');
-      $ctasCont.css('will-change', 'transform');
-
-      if (!middleOpen) {
-        $modalCont.addClass('is-open');
-        $modalCont.height(fullHeight);
-        $showMore.html('show less');
-      } else {
-        $modalCont.removeClass('is-open');
-        if (winMobile) {
-          $modalCont.css('overflow', 'hidden');
+      // Initialize hidden items and set the correct height to allow transition
+      getHiddenPermits('.permissions-list', '.ctas-container', function() {
+        if (!winMobile) {
+          $modalCont.height(fullHeight - ctasHeight);
         }
-        $showMore.html('show more');
-        // Check for changes in viewport height (if the address bar hides for example)
-        // And if so calculate the difference
-        if (window.innerHeight > initWinHeight){
-          $modalCont.height(initHeight + (window.innerHeight - initHeight));
+      });
+
+      // Get animation duration from css to define it only once
+      var animationDuration = $modalCont.css('transition-duration') ? (parseFloat($modalCont.css('transition-duration'))*1000) : 300;
+
+      // In case the show more btn is not needed remove it
+      if (winMobile && initWinHeight > fullHeight) {
+        $showMore.remove();
+      }
+
+      // Set correct height for modal to allow transition
+
+      $showMore.on('click', function() {
+        // Set some will-change properties to get better performance where supported
+        $modalCont.css('will-change', 'height');
+        $ctasCont.css('will-change', 'transform');
+
+        if (!middleOpen) {
+          $modalCont.addClass('is-open');
+          $modalCont.height(fullHeight);
+          $showMore.html('show less');
         } else {
-          $modalCont.height(initHeight);
+          $modalCont.removeClass('is-open');
+          if (winMobile) {
+            $modalCont.css('overflow', 'hidden');
+          }
+          $showMore.html('show more');
+          // Check for changes in viewport height (if the address bar hides for example)
+          // And if so calculate the difference
+          if (window.innerHeight > initWinHeight){
+            $modalCont.height(initHeight + (window.innerHeight - initHeight));
+          } else {
+            $modalCont.height(initHeight);
+          }
         }
-      }
 
-      middleOpen = !middleOpen;
+        middleOpen = !middleOpen;
 
-      setTimeout(function() {
-        getHiddenPermits('.permissions-list', '.ctas-container');
-      }, animationDuration/2);
+        setTimeout(function() {
+          getHiddenPermits('.permissions-list', '.ctas-container');
+        }, animationDuration/2);
 
-      // Prevent pointer events on the button during animation
-      $modalCont.addClass('is-animating');
-      setTimeout(function() {
-        // Remove not needed stuff after animation
-        $modalCont.removeClass('is-animating');
-        $modalCont.css('will-change', '');
-        $ctasCont.css('will-change', '');
-        getHiddenPermits('.permissions-list', '.ctas-container');
-      }, animationDuration);
-    });
+        // Prevent pointer events on the button during animation
+        $modalCont.addClass('is-animating');
+        setTimeout(function() {
+          // Remove not needed stuff after animation
+          $modalCont.removeClass('is-animating');
+          $modalCont.css('will-change', '');
+          $ctasCont.css('will-change', '');
+          getHiddenPermits('.permissions-list', '.ctas-container');
+        }, animationDuration);
+      });
 
-  }
-
-  function getHiddenPermits(cont, coverEl, cb) {
-    var $cont = $(cont),
-        $coverEl = $(coverEl);
-
-    var $permits = $cont.find('.permit-item');
-
-    $permits.each(function(i, el) {
-      var $permit = $(el),
-          $permitHeight = $permit.innerHeight(),
-          $permitOffTop = $permit.offset().top,
-          $coverOffTop = $coverEl.offset().top;
-
-      if ($permitOffTop >= ($coverOffTop - $permitHeight)) {
-        $permit.addClass('is-hidden');
-      } else {
-        $permit.removeClass('is-hidden');
-      }
-    });
-
-    $('.permit-item.is-hidden').each(function(i, el) {
-      $(el).css('transition-delay', (0.15*i) + 's');
-    })
-
-    if (cb) {
-      cb();
     }
+
+    function getHiddenPermits(cont, coverEl, cb) {
+      var $cont = $(cont),
+          $coverEl = $(coverEl);
+
+      var $permits = $cont.find('.permit-item');
+
+      $permits.each(function(i, el) {
+        var $permit = $(el),
+            $permitHeight = $permit.innerHeight(),
+            $permitOffTop = $permit.offset().top,
+            $coverOffTop = $coverEl.offset().top;
+
+        if ($permitOffTop >= ($coverOffTop - $permitHeight)) {
+          $permit.addClass('is-hidden');
+        } else {
+          $permit.removeClass('is-hidden');
+        }
+      });
+
+      $('.permit-item.is-hidden').each(function(i, el) {
+        $(el).css('transition-delay', (0.15*i) + 's');
+      })
+
+      if (cb) {
+        cb();
+      }
+    }
+  } else {
+    var $modalCont = $('.modal-second').length > 0 ? $('.modal-second') : null;
+    var $modalCont = $('.modal-third').length > 0 ? $('.modal-third') : $modalCont;
+    // Execute once
+    if ($modalCont.innerHeight() > window.innerHeight && !winMobile) {
+      $modalCont.addClass('center-reset');
+    }
+    // Bind to resize event to support devices that don't fire orientationchange event
+    // (maybe there's a better way to do this, but since theres no resizing in mobile, it's not a performance hazard)
+    $(window).on('resize', function() {
+      console.log('resize');
+      winMobile = window.innerWidth < 568 ? true : false;
+      if ($modalCont.innerHeight() > window.innerHeight && !winMobile && !$modalCont.hasClass('center-reset')) {
+        $modalCont.addClass('center-reset');
+      } else {
+        $modalCont.removeClass('center-reset');
+      }
+    })
   }
 });

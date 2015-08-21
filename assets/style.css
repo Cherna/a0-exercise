@@ -68,6 +68,7 @@
   background-position: -184px -1px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4);
   border-radius: 50%;
+  z-index: 50;
   cursor: pointer;
 }
 html,
@@ -123,16 +124,38 @@ body {
     border-radius: 5px;
   }
 }
+.modal-container.center-reset {
+  position: relative;
+  left: auto;
+  top: auto;
+  -webkit-transform: none;
+          transform: none;
+  margin: 0 auto;
+}
 .top-section {
+  position: relative;
   padding: 5.4% 0 2.9% 0;
   margin: 0;
-  overflow: hidden;
   text-align: center;
-  background-color: #ddd;
 }
 @media (min-width: 568px) {
   .top-section {
     padding: 45px 0 20px 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+.top-section .top-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #fafafa 0%, #e6e6e6 25%, #fafafa 50%, #e6e6e6 75%, #fafafa 100%);
+  z-index: 0;
+}
+@media (min-width: 568px) {
+  .top-section .top-background {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -151,10 +174,12 @@ body {
 .top-section .logos-container .app-logo {
   position: relative;
   margin-right: -10px;
-  z-index: 10;
+  z-index: 15;
 }
 .top-section .logos-container .auth0-logo {
+  position: relative;
   margin-left: -10px;
+  z-index: 10;
 }
 .top-section .title {
   font-size: 1rem;
@@ -309,6 +334,7 @@ body {
   top: auto;
   -webkit-transform: none;
           transform: none;
+  position: relative;
   margin-bottom: 15px;
 }
 .modal-second .top-section .logos-container img {
@@ -391,10 +417,19 @@ body {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
 }
+.modal-third {
+  height: auto;
+}
 @media (min-width: 568px) {
   .modal-third {
     width: 380px;
   }
+}
+.modal-third .middle-section {
+  padding: 26px 0;
+}
+.modal-third .middle-section .verification-notice {
+  margin-top: 21px;
 }
 .modal-third .code-scan-cont {
   text-align: center;
@@ -405,6 +440,17 @@ body {
   color: rgba(0,0,0,0.8);
   line-height: 24px;
   padding: 0 37px;
+  margin: 0 0 6px 0;
+}
+.modal-third .code-scan-help {
+  display: inline-block;
+  margin-top: 32px;
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 0.54rem;
+  text-transform: uppercase;
+  color: #4f85d8;
+  letter-spacing: 2px;
+  line-height: 14px;
 }
 .modal-container {
   transition: height 0.5s ease-in-out;
