@@ -172,6 +172,11 @@ body {
   margin-left: -10px;
   z-index: 10;
 }
+.top-section .logos-container .auth0-logo-nobg {
+  position: relative;
+  max-height: 60px;
+  z-index: 10;
+}
 .top-section .title {
   font-size: 1rem;
   line-height: 1.36em;
@@ -356,6 +361,11 @@ body {
   margin-left: 0;
 }
 @media (min-width: 568px) {
+  .modal-second .top-section {
+    padding-top: 14px;
+  }
+}
+@media (min-width: 568px) {
   .modal-second .middle-section {
     padding: 42px 0;
   }
@@ -482,6 +492,9 @@ body {
 .recovery-screen .recovery-input {
   font-size: 0.681rem;
 }
+.manual-code-screen {
+  height: 100%;
+}
 @media (min-width: 568px) {
   .manual-code-screen {
     width: 380px;
@@ -492,8 +505,16 @@ body {
   font-family: 'Avenir-Roman', sans-serif;
   color: #000;
   margin: 0;
-  font-size: 0.81rem;
+  font-size: 4vw;
   letter-spacing: 1px;
+}
+@media (min-width: 568px) {
+  .manual-code-screen .verification-manual-code {
+    font-size: 0.681rem;
+  }
+}
+.manual-code-screen .middle-section {
+  overflow: auto;
 }
 .manual-code-screen .continue-safe {
   margin-top: 32px;
