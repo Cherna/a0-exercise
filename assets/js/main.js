@@ -109,23 +109,35 @@ $(document).ready(function() {
         cb();
       }
     }
-  } else {
-    var $modalCont = $('.modal-second').length > 0 ? $('.modal-second') : null;
-    var $modalCont = $('.modal-third').length > 0 ? $('.modal-third') : $modalCont;
-    // Execute once
-    if ($modalCont.innerHeight() > window.innerHeight && !winMobile) {
-      $modalCont.addClass('center-reset');
-    }
-    // Bind to resize event to support devices that don't fire orientationchange event
-    // (maybe there's a better way to do this, but since theres no resizing in mobile, it's not a performance hazard)
-    $(window).on('resize', function() {
-      console.log('resize');
-      winMobile = window.innerWidth < 568 ? true : false;
-      if ($modalCont.innerHeight() > window.innerHeight && !winMobile && !$modalCont.hasClass('center-reset')) {
-        $modalCont.addClass('center-reset');
-      } else {
-        $modalCont.removeClass('center-reset');
-      }
-    })
   }
+
+  var $modal = $('.modal-container');
+  var $modal = $('.modal-second').length > 0 ? $('.modal-second') : $modal;
+  var $modal = $('.modal-third').length > 0 ? $('.modal-third') : $modal;
+  // Execute once
+  if ($modal.innerHeight() > window.innerHeight && !winMobile) {
+    $modal.addClass('center-reset');
+  }
+  // Bind to resize event to support devices that don't fire orientationchange event
+  // (maybe there's a better way to do this, but since theres no resizing in mobile, it's not a performance hazard)
+  $(window).on('resize', function() {
+    winMobile = window.innerWidth < 568 ? true : false;
+    if ($modal.innerHeight() > window.innerHeight && !winMobile && !$modal.hasClass('center-reset')) {
+      $modal.addClass('center-reset');
+    } else {
+      $modal.removeClass('center-reset');
+    }
+  });
+
+  if ($('.manual-code-screen').length > 0) {
+    var $manualModal = $('.manual-code-screen'),
+        $continueBtn = $('.btn-next'),
+        $continueSafe = $('.continue-safe');
+
+    $continueSafe.on('click', function() {
+      $continueBtn.removeClass('is-disabled');
+    });
+
+  }
+
 });

@@ -71,7 +71,7 @@ body
   .title
     font-size h22px
     line-height 1.36em
-    @extend .normal-text
+    normal-text()
     color main-text-color
   
   .subtitle
@@ -79,7 +79,7 @@ body
     font-size sub12px
     line-height 0.72em
     text-transform uppercase
-    @extend .normal-text
+    normal-text()
     color main-text-color
 
 .middle-section
@@ -112,8 +112,8 @@ body
 
     .permit-item
       display table
-      margin-bottom 20px 
-      @extend .normal-text
+      normal-text()
+      margin-bottom 20px
       font-size m15px
       text-align left
       font-family 'Avenir-Roman', sans-serif
@@ -136,6 +136,18 @@ body
     
     .icon-small
       margin-right 14px
+  
+  .recovery-code-link
+    display inline-block
+    margin-top 35px
+    padding 0 32px
+    font-family 'Proxima Nova', sans-serif
+    font-size sub10px
+    text-transform uppercase
+    color soft-blue-link
+    letter-spacing 2px
+    line-height 14px
+    
       
 .show-more
   margin 0
@@ -306,3 +318,38 @@ body
     color soft-blue-link
     letter-spacing 2px
     line-height 14px
+  
+
+.recovery-screen
+  
+  .verification-notice-tip
+    normal-text()
+    margin-top 32px
+    padding 0 30px
+    font-size sub12px
+    font-family 'Avenir-Book', sans-serif
+  
+  .recovery-input
+    font-size m15px
+  
+
+.manual-code-screen
+  
+  +breakpoint('mobile-landscape')
+    width 380px
+    
+  .verification-manual-code
+    normal-text()
+    font-size m18px
+    letter-spacing 1px
+  
+  .continue-safe
+    margin-top 32px
+    margin-bottom 0
+    font-family 'Proxima Nova', sans-serif
+    font-size sub12px
+    text-transform uppercase
+    color soft-blue-link
+    letter-spacing 2px
+    line-height 14px
+    cursor pointer
