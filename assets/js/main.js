@@ -132,10 +132,15 @@ $(document).ready(function() {
   if ($('.manual-code-screen').length > 0) {
     var $manualModal = $('.manual-code-screen'),
         $continueBtn = $('.ctas-container'),
-        $continueSafe = $('.continue-safe');
+        $continueSafe = $('.continue-safe'),
+        $continueCheck = $('#continue-safe');
 
     $continueSafe.on('click', function() {
-      $continueBtn.removeClass('is-disabled');
+      if ($continueCheck.prop('checked')) {
+        $continueBtn.removeClass('is-disabled');
+      } else {
+        $continueBtn.addClass('is-disabled');
+      }
     });
 
   }
