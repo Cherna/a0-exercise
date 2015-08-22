@@ -131,7 +131,7 @@ $(document).ready(function() {
 
   if ($('.manual-code-screen').length > 0) {
     var $manualModal = $('.manual-code-screen'),
-        $continueBtn = $('.btn-next'),
+        $continueBtn = $('.ctas-container'),
         $continueSafe = $('.continue-safe');
 
     $continueSafe.on('click', function() {

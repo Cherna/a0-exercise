@@ -19,16 +19,18 @@
   .is-disabled
     position relative
     pointer-events none
+    background-color #B5D7C2
+    transition background-color 0.3s ease-in-out
     
-    &::after
-      content ''
-      position absolute
-      top 0
-      left 0
-      right 0
-      bottom 0
-      background-color rgba(230,230,230,0.4)
-      border-bottom-left-radius border-radius+2
-      border-bottom-right-radius border-radius+2
-      opacity 1
-      transition opacity 0.3s ease-in-out
+    // &::after
+    //   content ''
+    //   position absolute
+    //   top 0
+    //   left 0
+    //   right 0
+    //   bottom 0
+    //   background-color rgba(230,230,230,0.4)
+    //   border-bottom-left-radius border-radius+2
+    //   border-bottom-right-radius border-radius+2
+    //   opacity 1
+    //   transition opacity 0.3s ease-in-out
